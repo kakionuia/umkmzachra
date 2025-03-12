@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fce4ec; /* Pink background */
+    color: #333;
+    height: 100vh;
+  }
+  
+  /* Container */
+  .container {
+    display: flex;
+    flex-direction: column; /* Ensure it stacks on small screens */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: #d81b60; /* Deep pink */
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    left: -250px; /* Initially hidden */
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  ul li a {
+    position: relative;
+    top: 100px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #c2185b;
+  }
+  
+  /* Main content area */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: margin-left 0.3s ease;
+    flex-direction: column; /* Stack the content */
+    text-align: center;
+  }
+  
+  /* Navbar with padding, shadow, and elegant style */
+  .navbar {
+    background-color: #f06292; /* Light pink */
+    padding: 10px 20px; /* Add padding to make it look fuller */
+    width: 100%; /* Make navbar full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure navbar stays on top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-bottom: 2px solid #c2185b; /* Border bottom for a sharper look */
+    border-radius: 5px;
+  }
+  
+  .navbar h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600; /* Bold font */
+  }
+  
+  .toggle-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px; /* Add some right margin to prevent icon from touching the edge */
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect on toggle button */
+  .toggle-btn:hover {
+    color: #c2185b; /* Change color on hover */
+  }
+  
+
+  /* Main content */
+  .main-content {
+    margin-left: 250px;
+    padding: 100px 20px; /* Offset content from navbar */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-content h1 {
+    font-size: 36px;
+    color: #d81b60;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 150px;
+  }
+
+  .main-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+    text-align: center; /* Center the text */
+    max-width: 800px;
+  }
+
+  .main-content img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Footer styling */
+  .footer {
+    background-color: #d81b60;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    bottom: 0;
+  }
+
+  .footer p {
+    margin-bottom: 5px;
+  }
+
+  .footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Media Queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+      padding-top: 120px;
+    }
+
+    /* Navbar */
+    .navbar {
+      padding: 10px 10px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      left: 0;
+      position: fixed;
+      z-index: 1001;
+    }
+
+    /* Adjust text size and image size on small screens */
+    .main-content h1 {
+      font-size: 28px;
+    }
+
+    .main-content p {
+      font-size: 16px;
+      padding: 0 20px;
+    }
+
+    .main-content img {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* Footer */
+    .footer {
+      font-size: 14px;
+    }
+  }
